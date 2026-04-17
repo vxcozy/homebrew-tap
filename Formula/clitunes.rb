@@ -1,10 +1,7 @@
 class Clitunes < Formula
   desc "Terminal music player with internet radio, Spotify, and real-time visualisers"
   homepage "https://github.com/vxcozy/clitunes"
-  version "1.0.0"
   license "MIT"
-
-  depends_on "alsa-lib" => :linux
 
   on_macos do
     on_arm do
@@ -18,6 +15,8 @@ class Clitunes < Formula
   end
 
   on_linux do
+    depends_on "alsa-lib"  # libasound.so.2 runtime dep
+
     on_arm do
       url "https://github.com/vxcozy/clitunes/releases/download/v1.0.0/clitunes-v1.0.0-aarch64-unknown-linux-gnu.tar.gz"
       sha256 "65896e8a92be437269c5810687ae5c875343f769b46e2548b9820feda68bac25"
