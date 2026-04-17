@@ -16,6 +16,7 @@ class Clitunes < Formula
 
   on_linux do
     depends_on "alsa-lib" # libasound.so.2 runtime dep
+    depends_on "patchelf" => :build
 
     on_arm do
       url "https://github.com/vxcozy/clitunes/releases/download/v1.0.0/clitunes-v1.0.0-aarch64-unknown-linux-gnu.tar.gz"
@@ -29,6 +30,19 @@ class Clitunes < Formula
 
   def install
     bin.install "clitunes", "clitunesd"
+
+    # The Linux binaries are built on GitHub Actions without Homebrew's
+    # linker setup, so they don't know about Homebrew's alsa-lib location.
+    # patchelf rewrites RPATH so the dynamic linker finds libasound.so.2
+    # under HOMEBREW_PREFIX/lib at runtime.
+    on_linux do
+      system Formula["patchelf"].opt_bin/"patchelf",
+             "--set-rpath", HOMEBREW_PREFIX/"lib",
+             bin/"clitunesd"
+      system Formula["patchelf"].opt_bin/"patchelf",
+             "--set-rpath", HOMEBREW_PREFIX/"lib",
+             bin/"clitunes"
+    end
   end
 
   test do
