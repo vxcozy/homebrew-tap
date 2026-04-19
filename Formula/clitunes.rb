@@ -5,12 +5,12 @@ class Clitunes < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/vxcozy/clitunes/releases/download/v1.2.0/clitunes-v1.2.0-aarch64-apple-darwin.tar.gz"
-      sha256 "c746c07e08a8045c35d7c57f425a4f3623d71462a55ae28c7a91c74979b260e0"
+      url "https://github.com/vxcozy/clitunes/releases/download/v1.2.1/clitunes-v1.2.1-aarch64-apple-darwin.tar.gz"
+      sha256 "b04dc451be20e962d3d2d9590a8d116dcbdb90e0ed0d7d50edfa6559f430db48"
     end
     on_intel do
-      url "https://github.com/vxcozy/clitunes/releases/download/v1.2.0/clitunes-v1.2.0-x86_64-apple-darwin.tar.gz"
-      sha256 "98829afd1ca820b3786934de9b4aabf2decb6c77bc5daa27305d1c8e0495bba5"
+      url "https://github.com/vxcozy/clitunes/releases/download/v1.2.1/clitunes-v1.2.1-x86_64-apple-darwin.tar.gz"
+      sha256 "68fb4ded76de75b0193256b6ddc68efb2ec7e1d408fc3f8f673e12d56c96b196"
     end
   end
 
@@ -19,12 +19,12 @@ class Clitunes < Formula
     depends_on "alsa-lib" # libasound.so.2 runtime dep
 
     on_arm do
-      url "https://github.com/vxcozy/clitunes/releases/download/v1.2.0/clitunes-v1.2.0-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "aa9df8e29307a1fb925ab8feeb14d16acb311e4dc1ae284a8bac21e3737f31fe"
+      url "https://github.com/vxcozy/clitunes/releases/download/v1.2.1/clitunes-v1.2.1-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "912b953b602dbfe38d9ae035ae67b3097363d55cfa462ab9c722c4ca5ad368de"
     end
     on_intel do
-      url "https://github.com/vxcozy/clitunes/releases/download/v1.2.0/clitunes-v1.2.0-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "08da4140d5498096d2f6487b61001ba9b1a03d6699c45d76209559337b03a00f"
+      url "https://github.com/vxcozy/clitunes/releases/download/v1.2.1/clitunes-v1.2.1-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "34cf4a572ab862dde1469cabeea314c784d1280db89edf233f1d8972184d0282"
     end
   end
 
